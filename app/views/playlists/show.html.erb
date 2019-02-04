@@ -32,11 +32,13 @@
 <% end %>
 
 <h3>Songs</h3>
+<ul>
 <% @playlist.songs.each do |song| %>
-  <ul>
-    <li>
-      <%= song.name %>
-      <%= link_to "Destroy", playlist_song_path(@playlist, song), method: :delete, data: {confirm: 'Estas seguro'} %>
-      </li>
-  </ul>
+  <li>
+    <h4>
+      <%= song.name %>|<%= song.artist %>
+      <%= link_to "Destroy", playlist_song_path(@playlist, song), method: :delete, data: {confirm: 'Estas seguro'}, class:"btn btn-danger" %>
+    </h4>
+  </li>
 <% end %>
+</ul>

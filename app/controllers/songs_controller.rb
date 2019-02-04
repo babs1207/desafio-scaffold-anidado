@@ -1,11 +1,11 @@
 class SongsController < ApplicationController
   def create
-    @song = Song.new(song_params)
-    @song.playlist_id = params[:playlist_id]
-    if @song.save
-      redirect_to @song.playlist, notice: 'La canción se ha creado con éxito!'
+    song = Song.new(song_params)
+    song.playlist_id = params[:playlist_id]
+    if song.save
+      redirect_to song.playlist, notice: 'La canción se ha creado con éxito!'
     else
-      redirect_to @song.playlist, notice: 'La canción no se pudo crear!'
+      redirect_to song.playlist, notice: 'La canción no se pudo crear!'
     end
   end
 

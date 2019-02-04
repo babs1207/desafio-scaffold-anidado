@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :playlists do
-    resources :songs
+    resources :songs, only: [:create, :destroy]
   end
   resources :users
 
